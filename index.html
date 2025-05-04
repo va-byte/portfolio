@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vaibhav Negi | Portfolio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      display: flex;
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      width: 220px;
+      background: rgba(0, 0, 0, 0.8);
+      height: 100vh;
+      position: fixed;
+      padding-top: 2rem;
+      border-right: 1px solid #444;
+      box-shadow: 2px 0 10px #000000aa;
+    }
+
+    nav h2 {
+      text-align: center;
+      color: #00ffd9;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 5px #00ffd966;
+    }
+
+    nav a {
+      display: block;
+      padding: 1rem 2rem;
+      color: #ccc;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background: #00ffd91a;
+      color: #00ffd9;
+      transform: translateX(5px);
+    }
+
+    .container {
+      margin-left: 220px;
+      padding: 2rem;
+      width: calc(100% - 220px);
+    }
+
+    section {
+      margin-bottom: 2rem;
+      transition: all 0.5s ease-in-out;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1, h2 {
+      color: #00ffd9;
+      text-shadow: 0 0 4px #00ffd955;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #ddd;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 10px;
+      padding: 1rem 1.5rem;
+      margin: 0.5rem 0;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 15px rgba(0, 255, 217, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 20px rgba(0, 255, 217, 0.3);
+    }
+
+    form {
+      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input, textarea {
+      padding: 0.8rem;
+      border: none;
+      border-radius: 6px;
+      background: #1e1e1e;
+      color: #fff;
+      outline: 2px solid #333;
+      transition: outline 0.3s ease;
+    }
+
+    input:focus, textarea:focus {
+      outline: 2px solid #00ffd9;
+    }
+
+    button {
+      padding: 0.8rem;
+      background: linear-gradient(135deg, #00ffd9, #00b3ff);
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #00b3ff, #00ffd9);
+      transform: scale(1.05);
+    }
+
+    .typing {
+      color: #00ffd9;
+      font-size: 1.3rem;
+      font-weight: bold;
+      border-right: 2px solid #00ffd9;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 4s steps(80, end) forwards, blink 0.7s infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h2>Portfolio</h2>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="container">
+    <section id="home">
+      <h1>Welcome!</h1>
+      <div class="typing">
+        Hi! I’m Vaibhav Negi — a passionate engineering student who enjoys coding, solving real-world problems, and expressing creativity through sketching and design. I strive to create impactful solutions and grow every day.
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="card">
+        <strong>Education:</strong> B.Tech Student, Dronacharya College of Engineering
+      </div>
+      <div class="card">
+        <strong>Skills:</strong> C Programming, Web Development, Sketching, Creative Logic
+      </div>
+      <div class="card">
+        <strong>Hobbies:</strong> Drawing, Coding, Music, UI Design
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form id="contactForm">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+    <footer>
+      &copy; 2025 Vaibhav Negi | Designed with 💻 and 🎨
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Thanks for your message!");
+      this.reset();
+    });
+  </script>
+</body>
+</html>
